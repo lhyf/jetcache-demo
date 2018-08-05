@@ -37,14 +37,30 @@ public class UserController {
      */
     @GetMapping("/list")
     public List<TUser> getAllUser(){
-        List<TUser> list = userService.getAllUser();
+        TUser user = new TUser();
+        user.setUsername("AAAAAAA");
+        List<TUser> list = userService.getAllUser(user);
 
-        for(TUser user:list){
+        for(TUser u:list){
             // ...
-            System.out.println(user);
+            System.out.println(u);
         }
 
         return list;
     }
+    @GetMapping("/delete/all")
+    public void delet(){
+        TUser user = new TUser();
+        user.setUsername("AAAAAAA");
+        userService.delet(user);
+        System.out.println("delete");
+    }
 
+    @GetMapping("/delete/user")
+    public void delet2(){
+        TUser user = new TUser();
+        user.setUsername("AAAAAAA");
+        userService.delet2(user);
+        System.out.println("delete2");
+    }
 }
