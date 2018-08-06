@@ -11,5 +11,7 @@ import java.util.List;
  *
  **/
 public interface UserService {
-    List<TUser> getAllUser();
+    List<TUser> getAllUser(TUser user);
+    void delet(TUser user);
+    void delet2(TUser user);
 }
